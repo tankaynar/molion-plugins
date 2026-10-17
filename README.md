@@ -10,6 +10,7 @@ Plugins for the Molion chemical drawing app:
 | `orbitals` | Orbitals | s, p, sp, sp², sp³ and d orbitals on atoms, and orbital templates |
 | `teaching` | Teaching | Newman, Fischer and Haworth projections, Disconnect Bond…, Present Mechanism |
 | `picture-to-structure` | Picture to Structure | Convert to Structure: a picture of a molecule becomes the molecule |
+| `si-toolkit` | SI Toolkit | HRMS lines, elemental analyses and an SI stub for every compound, and the SI card |
 
 Each folder is a separate program with its own README, licence files and tests. A plugin
 talks to the app over newline-delimited JSON-RPC 2.0 on stdin and stdout, and its
@@ -21,7 +22,7 @@ One plugin at a time, from this folder (each has its own `tests/conftest.py`, so
 collected together):
 
 ```bash
-for plugin in nmr-prediction pubchem tlc-plate orbitals teaching picture-to-structure; do
+for plugin in nmr-prediction pubchem tlc-plate orbitals teaching picture-to-structure si-toolkit; do
   python3 -m pytest -q "$plugin"
 done
 ```

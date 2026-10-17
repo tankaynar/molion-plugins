@@ -23,6 +23,6 @@ jobs:
       - name: Run each plugin's tests
         shell: bash
         run: |
-          for plugin in nmr-prediction pubchem tlc-plate orbitals teaching picture-to-structure; do
+          for plugin in nmr-prediction pubchem tlc-plate orbitals teaching picture-to-structure si-toolkit; do
             python -m pytest -q "$plugin"
           done

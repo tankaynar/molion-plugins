@@ -1,0 +1,31 @@
+{
+  "id": "molion.si-toolkit",
+  "name": "SI Toolkit",
+  "version": "1.0.0",
+  "description": "HRMS lines, elemental analyses and an SI stub for every compound, ready to paste.",
+  "exec": { "command": "python3", "args": ["main.py"] },
+  "capabilities": ["scene:read", "files"],
+  "contributes": {
+    "commands": [
+      { "id": "copy-hrms", "label": "Copy HRMS Line…", "category": "SI", "icon": "M⁺",
+        "keywords": ["hrms", "mass", "ms", "esi", "adduct", "calcd", "exact mass", "supporting information", "si"],
+        "description": "Copy the calculated HRMS line of the selection, for the adduct you choose.",
+        "query": { "placeholder": "Adduct: M+H, M+Na, M−H, EI…", "minLength": 0, "debounceMs": 100 } },
+      { "id": "copy-elemental", "label": "Copy Elemental Analysis", "category": "SI", "icon": "%",
+        "keywords": ["elemental analysis", "anal", "calcd", "chn", "combustion", "supporting information", "si"],
+        "description": "Copy \"Anal. Calcd for …: C, …; H, …\" for the selection." },
+      { "id": "copy-stub", "label": "Copy SI Stub", "category": "SI", "icon": "¶",
+        "keywords": ["si", "supporting information", "characterisation", "characterization", "compounds", "word"],
+        "description": "Copy every compound's number, name, formula, HRMS, SMILES and InChI, for Word." },
+      { "id": "export-stub", "label": "Export SI Stub as CSV…", "category": "SI", "icon": "¶",
+        "keywords": ["si", "supporting information", "csv", "spreadsheet", "compounds", "eln"],
+        "description": "Save every compound's number, name, formula, HRMS, SMILES and InChI as a CSV file." }
+    ],
+    "cards": [
+      { "id": "si", "title": "SI", "label": "SI Toolkit",
+        "appliesTo": "has-atoms", "input": "structure", "icon": "¶",
+        "keywords": ["hrms", "elemental analysis", "supporting information", "si"],
+        "description": "The selection's HRMS line, elemental analysis and SI stub, each to copy." }
+    ]
+  }
+}
