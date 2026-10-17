@@ -105,12 +105,16 @@ def serve(host: Host, load=load_recognizer) -> int:
 
 
 def check_runtime() -> int:
-    """For checking a frozen build: whether the libraries recognition needs load here."""
+    """For checking a frozen build: whether the libraries recognition needs load here, and
+    whether the model's download can verify HTTPS (0 root certificates: it never can)."""
     import numpy
     import onnxruntime
     import PIL
-    print(f'onnxruntime {onnxruntime.__version__}, numpy {numpy.__version__}, Pillow {PIL.__version__}')
-    return 0
+    from p2s.model_store import ca_certificate_count
+    certificates = ca_certificate_count()
+    print(f'onnxruntime {onnxruntime.__version__}, numpy {numpy.__version__}, Pillow {PIL.__version__}, '
+          f'{certificates} root certificates')
+    return 0 if certificates else 1
 
 
 def main() -> int:

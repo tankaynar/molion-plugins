@@ -91,3 +91,18 @@ def test_a_local_model_folder_overrides_the_download(tmp_path, monkeypatch):
     store = ModelStore(None, ())
     assert store.ready()
     assert store.folder == str(tmp_path)
+
+
+def test_the_systems_own_certificates_are_loaded_for_https(tmp_path):
+    # What makes the download work in a frozen build on a machine without the build
+    # machine's Python: the operating system's bundle, found and loaded.
+    import ssl
+    from p2s.model_store import CA_BUNDLES, make_context
+    bundle = next((path for path in CA_BUNDLES if os.path.isfile(path)), None)
+    if bundle is None:
+        pytest.skip('no system certificate bundle here (Windows reads its own store)')
+    empty = make_context(bundles=())
+    loaded = make_context(bundles=(str(tmp_path / 'missing.pem'), bundle))
+    assert len(loaded.get_ca_certs()) > 0
+    assert len(loaded.get_ca_certs()) >= len(empty.get_ca_certs())
+    assert isinstance(loaded, ssl.SSLContext)

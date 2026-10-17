@@ -15,6 +15,8 @@ import hashlib
 import json
 import os
 import shutil
+import ssl
+import sys
 import urllib.request
 from dataclasses import dataclass
 from typing import Callable
@@ -55,8 +57,51 @@ class ModelError(RuntimeError):
     """The model could not be fetched or did not match what was expected."""
 
 
+# Where operating systems keep their root certificates as one PEM file: macOS (the bundle
+# Apple maintains), Debian/Ubuntu/Arch, Fedora/RHEL, openSUSE, Alpine.
+CA_BUNDLES = (
+    '/etc/ssl/cert.pem',
+    '/etc/ssl/certs/ca-certificates.crt',
+    '/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem',
+    '/etc/pki/tls/certs/ca-bundle.crt',
+    '/etc/ssl/ca-bundle.pem',
+)
+
+
+def make_context(bundles=CA_BUNDLES) -> ssl.SSLContext:
+    # A frozen build's OpenSSL looks for certificates where the build machine's Python kept
+    # them (Homebrew's or python.org's folder on macOS), which users' machines usually lack:
+    # the download then fails verification in packaged builds only. So the operating
+    # system's own bundle is loaded as well. Windows needs nothing: Python reads its store.
+    context = ssl.create_default_context()
+    if sys.platform != 'win32':
+        for path in bundles:
+            if os.path.isfile(path):
+                try:
+                    context.load_verify_locations(cafile=path)
+                    break
+                except (OSError, ssl.SSLError):
+                    continue
+    return context
+
+
+_context: ssl.SSLContext | None = None
+
+
+def ca_certificate_count() -> int:
+    """How many root certificates HTTPS can verify against; 0 means no download can succeed."""
+    return len(_get_context().get_ca_certs())
+
+
+def _get_context() -> ssl.SSLContext:
+    global _context
+    if _context is None:
+        _context = make_context()
+    return _context
+
+
 def _fetch(url: str, timeout: float):
-    return urllib.request.urlopen(url, timeout=timeout)
+    return urllib.request.urlopen(url, timeout=timeout, context=_get_context())
 
 
 class ModelStore:
