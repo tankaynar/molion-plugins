@@ -178,9 +178,12 @@ def test_the_card_shows_each_view_with_its_copy(tmp_path):
     mh_view, mna_view, anal_view, stub_view = answer['views']
     assert mh_view['copy'] == 'HRMS (ESI) m/z: [M+H]⁺ calcd for C₁₃H₁₉O₂ 207.1380, found '
     assert '229.1199' in mna_view['copy']
-    assert anal_view['blocks'] == [{'type': 'note', 'text': 'Anal. Calcd for C₁₃H₁₈O₂: C, 75.69; H, 8.80'}]
+    assert mh_view['blocks'] == [{'type': 'note', 'label': '2',
+                                  'text': 'HRMS (ESI) m/z: [M+H]⁺ calcd for C₁₃H₁₉O₂ 207.1380'}]
+    assert anal_view['blocks'] == [{'type': 'note', 'label': '2', 'text': 'Anal. Calcd for C₁₃H₁₈O₂: C, 75.69; H, 8.80'}]
     assert stub_view['copy'] == '2\nC₁₃H₁₈O₂\nSMILES: Sm1\nInChI: Im1\n'
-    assert stub_view['blocks'][0]['text'] == '2 · C₁₃H₁₈O₂'
+    assert stub_view['blocks'] == [{'type': 'note', 'label': '2', 'text': 'C₁₃H₁₈O₂ · Sm1'}]
+    assert answer['subtitle'] == 'Calculated'
     # The card never waits on the namer.
     assert all('name' not in c['payload']['targets'] for c in molion.calls('scene:get-strings'))
     assert len(molion.calls('clipboard')) == 1      # the invoke's; a card never copies
@@ -217,9 +220,10 @@ def test_a_stub_without_names_says_why():
 
 
 def test_several_structures_on_the_card_are_told_apart_by_number_or_formula():
-    molion = drawing(molecules=[molecule('m1', 'a1', '2'), molecule('m2', 'a2')])
-    answer = final(run(molion, request('card', {'cardId': 'si', 'scope': 'document',
-                                                 'structures': [{'moleculeId': 'm1'}, {'moleculeId': 'm2'}]})))
-    texts = [block['text'] for block in answer['views'][0]['blocks']]
-    assert texts[0].startswith('2: HRMS')
-    assert texts[1].startswith('C₁₃H₁₈O₂: HRMS')
+    molion = drawing(molecules=[molecule('m1', 'a1', '10'), molecule('m2', 'a2'), molecule('m3', 'a3', '2')])
+    answer = final(run(molion, request('card', {'cardId': 'si', 'scope': 'document', 'structures': [
+        {'moleculeId': 'm1'}, {'moleculeId': 'm2'}, {'moleculeId': 'm3'}]})))
+    # Numbered first, in number order.
+    assert [block['label'] for block in answer['views'][0]['blocks']] == ['2', '10', 'C₁₃H₁₈O₂']
+    assert answer['views'][3]['blocks'][2] == {'type': 'note', 'label': 'C₁₃H₁₈O₂', 'text': 'Sm2'}
+    assert answer['subtitle'] == 'Calculated for 3 structures'
