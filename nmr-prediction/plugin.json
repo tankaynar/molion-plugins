@@ -1,0 +1,21 @@
+{
+  "id": "molion.nmr-prediction",
+  "name": "NMR Prediction",
+  "version": "1.0.0",
+  "description": "Predicted ¹H and ¹³C spectra for the selection, linked to its atoms.",
+  "license": "MIT; shift data under the nmrshiftdb2 Database License",
+  "exec": { "command": "python3", "args": ["main.py", "--data", "data/shifts.bin.gz"] },
+  "capabilities": ["scene:read"],
+  "contributes": {
+    "cards": [
+      { "id": "nmr",
+        "title": "NMR",
+        "label": "NMR Prediction",
+        "appliesTo": "has-atoms",
+        "input": "structure",
+        "icon": "δ",
+        "keywords": ["nmr", "spectrum", "shift", "1H", "13C", "proton", "carbon", "predict"],
+        "description": "Predicted ¹H and ¹³C spectra of the selection." }
+    ]
+  }
+}

@@ -1,0 +1,2231 @@
+{
+ "4-methylanisole": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 6
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 8
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 7
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a6",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a7",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a8",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     5,
+     7
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     7,
+     8
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     8,
+     2
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "4-methylanisole"
+ },
+ "4-methylcyclohexene": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 6
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 1
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a6",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 2,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     6,
+     1
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "4-methylcyclohexene"
+ },
+ "benzaldehyde": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 7
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a6",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a7",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     6,
+     7
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     7,
+     2
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "benzaldehyde"
+ },
+ "benzene": {
+  "atoms": [
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a0",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": true,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     5,
+     0
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "benzene"
+ },
+ "cyclohexene": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a0",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": true,
+    "order": 2,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     5,
+     0
+    ],
+    "inRing": true,
+    "order": 1,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "cyclohexene"
+ },
+ "ethyl acetate": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a2",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a3",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 5
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a4",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a5",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 2
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     5
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "ethyl acetate"
+ },
+ "isopropylbenzene": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 8
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a2",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 7
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a6",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a7",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a8",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     3
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     6,
+     7
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     7,
+     8
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     8,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "isopropylbenzene"
+ },
+ "methyl (E)-crotonate": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a2",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a3",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 6
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a4",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a5",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 5
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a6",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": {
+     "atoms": [
+      0,
+      3
+     ],
+     "relation": "trans"
+    }
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     5
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "methyl (E)-crotonate"
+ },
+ "methyl (Z)-crotonate": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a2",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a3",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 6
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a4",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a5",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 5
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a6",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": {
+     "atoms": [
+      0,
+      3
+     ],
+     "relation": "cis"
+    }
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     3,
+     5
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "methyl (Z)-crotonate"
+ },
+ "propan-1-ol": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 2,
+    "id": "a2",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "O",
+    "hybridization": "sp3",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "propan-1-ol"
+ },
+ "styrene": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 2,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 1
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 7
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a6",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 3
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a7",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 5
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 2,
+    "stereo": null
+   },
+   {
+    "aromatic": false,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     6,
+     7
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     7,
+     2
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "styrene"
+ },
+ "thiophene": {
+  "atoms": [
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a0",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     5
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a1",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     5
+    ],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     5
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "S",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     5
+    ],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     5
+    ],
+    "symmetryClass": 2
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": true,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     0
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "thiophene"
+ },
+ "toluene": {
+  "atoms": [
+   {
+    "aromatic": false,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp3",
+    "hydrogens": 3,
+    "id": "a0",
+    "inRing": false,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [],
+    "symmetryClass": 0
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 0,
+    "id": "a1",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 6
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a2",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a3",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a4",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 1
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a5",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 2
+   },
+   {
+    "aromatic": true,
+    "charge": 0,
+    "element": "C",
+    "hybridization": "sp2",
+    "hydrogens": 1,
+    "id": "a6",
+    "inRing": true,
+    "isotope": null,
+    "radical": 0,
+    "ringSizes": [
+     6
+    ],
+    "symmetryClass": 4
+   }
+  ],
+  "bonds": [
+   {
+    "aromatic": false,
+    "atoms": [
+     0,
+     1
+    ],
+    "inRing": false,
+    "order": 1,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     1,
+     2
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     2,
+     3
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     3,
+     4
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     4,
+     5
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     5,
+     6
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   },
+   {
+    "aromatic": true,
+    "atoms": [
+     6,
+     1
+    ],
+    "inRing": true,
+    "order": 1.5,
+    "stereo": null
+   }
+  ],
+  "focus": null,
+  "moleculeId": "toluene"
+ }
+}

@@ -1,0 +1,4 @@
+# Only what recognition needs at run time; the protocol and molfile code are standard library.
+onnxruntime>=1.18,<2
+numpy>=1.26,<3
+Pillow>=10.4,<12

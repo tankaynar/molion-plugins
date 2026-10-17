@@ -1,0 +1,20 @@
+{
+  "id": "molion.picture-to-structure",
+  "name": "Picture to Structure",
+  "version": "1.0.0",
+  "description": "Turns a picture of a molecule, from a paper or a screenshot, into a structure you can edit. Recognition runs on this computer.",
+  "license": "MIT",
+  "exec": { "command": "python3", "args": ["main.py"] },
+  "capabilities": ["scene:read", "scene:write", "network"],
+  "contributes": {
+    "actions": [
+      { "id": "convert",
+        "label": "Convert to Structure",
+        "appliesTo": "single-image",
+        "icon": "⌬",
+        "keywords": ["recognise", "recognize", "ocr", "ocsr", "image to molecule", "picture",
+                     "redraw", "screenshot", "paper", "molscribe"],
+        "description": "Replace the selected picture with the molecule it shows." }
+    ]
+  }
+}

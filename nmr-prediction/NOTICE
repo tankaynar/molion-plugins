@@ -1,0 +1,25 @@
+NMR Prediction for Molion
+=========================
+
+The plugin's code is under the MIT licence (LICENSE).
+
+The shift table
+---------------
+
+data/shifts.bin.gz contains information from nmrshiftdb2 (www.nmrshiftdb.org), which is
+made available here under the nmrshiftdb2 Database License:
+https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdbhtml/nmrshiftdb2datalicense.txt
+
+It is a derivative database of nmrshiftdb2 (statistics of measured shifts, grouped by the
+surroundings of each atom; see data/SOURCE.md for how it was built) and is distributed under
+that same licence. The licence requires software that relies on the database to be released
+under an Open Source Initiative-approved licence: this plugin is, under the MIT licence. It is
+a separate program from Molion, which talks to it over Molion's plugin protocol and does not
+read the table itself.
+
+Method
+------
+
+Shifts are predicted with HOSE codes, after W. Bremser, "HOSE — a novel substructure code",
+Analytica Chimica Acta 103 (1978) 355–365. The code here is the plugin's own; nothing was
+taken from other implementations.

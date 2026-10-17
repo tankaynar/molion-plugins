@@ -1,0 +1,24 @@
+{
+  "id": "molion.pubchem",
+  "name": "PubChem",
+  "version": "1.0.0",
+  "description": "Finds compounds on PubChem by name, CID or InChIKey and places PubChem's own drawing.",
+  "exec": { "command": "python3", "args": ["main.py"] },
+  "capabilities": ["network"],
+  "contributes": {
+    "commands": [
+      { "id": "search",
+        "label": "Search PubChem…",
+        "category": "PubChem",
+        "icon": "⌕",
+        "keywords": ["pubchem", "compound", "cid", "inchikey", "online", "lookup", "database"],
+        "description": "Find a compound on PubChem by name, CID or InChIKey.",
+        "query": {
+          "placeholder": "Name, CID or InChIKey",
+          "minLength": 2,
+          "debounceMs": 300,
+          "fallback": true
+        } }
+    ]
+  }
+}

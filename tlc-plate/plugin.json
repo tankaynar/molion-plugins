@@ -1,0 +1,36 @@
+{
+  "id": "molion.tlc",
+  "name": "TLC Plate",
+  "version": "1.0.0",
+  "description": "Thin-layer chromatography plates: lanes, spots with Rf, co-spots, stains and eluents.",
+  "exec": { "command": "python3", "args": ["main.py"] },
+  "capabilities": ["scene:read", "scene:write"],
+  "contributes": {
+    "commands": [
+      { "id": "new-plate",
+        "label": "New TLC Plate",
+        "category": "TLC Plate",
+        "icon": "▯",
+        "keywords": ["tlc", "plate", "thin layer", "chromatography", "rf", "spot", "stain", "eluent"],
+        "description": "Place a TLC plate with starting material, co-spot and reaction lanes." }
+    ],
+    "actions": [
+      { "id": "edit", "label": "Edit TLC…", "appliesTo": "own-image", "section": "TLC Plate",
+        "subtitle": "Spots, lanes, stain and eluent", "icon": "▯", "doubleClick": true },
+      { "id": "set-stain", "icon": "◐", "label": "Set Stain…", "appliesTo": "own-image", "section": "TLC Plate",
+        "subtitle": "UV, KMnO₄, anisaldehyde, CAM…",
+        "query": { "placeholder": "Stain", "minLength": 1, "debounceMs": 100 } },
+      { "id": "set-eluent", "icon": "≋", "label": "Set Eluent…", "appliesTo": "own-image", "section": "TLC Plate",
+        "subtitle": "The solvent system, shown under the plate",
+        "query": { "placeholder": "30% EtOAc/hexanes", "minLength": 1, "debounceMs": 100 } },
+      { "id": "label-lanes", "icon": "A", "label": "Label Lanes…", "appliesTo": "own-image", "section": "TLC Plate",
+        "subtitle": "SM, Co, Rxn…",
+        "query": { "placeholder": "Labels, separated by commas", "minLength": 1, "debounceMs": 100 } },
+      { "id": "add-lane", "icon": "+", "label": "Add Lane", "appliesTo": "own-image", "section": "TLC Plate" },
+      { "id": "remove-lane", "icon": "−", "label": "Remove Last Lane", "appliesTo": "own-image", "section": "TLC Plate" },
+      { "id": "add-cospot", "icon": "⊕", "label": "Add Co-spot Lane", "appliesTo": "own-image", "section": "TLC Plate",
+        "subtitle": "The first and last sample lanes together" },
+      { "id": "toggle-rf", "icon": "#", "label": "Show or Hide Rf Values", "appliesTo": "own-image", "section": "TLC Plate" }
+    ]
+  }
+}

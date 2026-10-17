@@ -1,0 +1,10 @@
+.venv
+venv
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+
+# No trailing slashes: these may be symlinks to a working copy elsewhere.
+# Picture to Structure: exported model files, uploaded to a release rather than committed.
+picture-to-structure/tools/out

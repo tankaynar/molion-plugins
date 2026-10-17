@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Picture to Structure's recognition tests need these; the rest are standard library.
+      - run: python -m pip install pytest numpy Pillow
+      - name: Run each plugin's tests
+        shell: bash
+        run: |
+          for plugin in nmr-prediction pubchem tlc-plate orbitals teaching picture-to-structure; do
+            python -m pytest -q "$plugin"
+          done

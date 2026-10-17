@@ -1,0 +1,45 @@
+{
+  "id": "molion.teaching",
+  "name": "Teaching",
+  "version": "1.0.0",
+  "description": "Newman, Fischer and Haworth projections, retrosynthetic disconnections, mechanisms presented step by step, and worksheets.",
+  "exec": { "command": "python3", "args": ["main.py"] },
+  "capabilities": ["scene:read", "scene:write"],
+  "contributes": {
+    "commands": [
+      { "id": "present-mechanism", "label": "Present Mechanism", "category": "Teaching", "icon": "▶",
+        "keywords": ["mechanism", "lecture", "present", "slides", "step", "curved arrows", "teaching"],
+        "description": "Show the drawing full screen, one curved arrow at a time." }
+    ],
+    "actions": [
+      { "id": "newman", "label": "Newman Projection", "appliesTo": "single-bond", "section": "Teaching",
+        "subtitle": "Looking down this bond", "icon": "⊙" },
+      { "id": "edit-newman", "label": "Edit Newman…", "appliesTo": "own-image", "section": "Teaching",
+        "subtitle": "Turn the bond: staggered, gauche, eclipsed", "icon": "⊙", "doubleClick": true },
+      { "id": "fischer", "label": "Fischer Projection", "appliesTo": "has-atoms", "section": "Teaching",
+        "subtitle": "The carbon chain upright", "icon": "┼" },
+      { "id": "fischer-wedges", "label": "Fischer Projection with Wedges", "appliesTo": "has-atoms", "section": "Teaching",
+        "subtitle": "Horizontal bonds wedged, so the stereo is kept", "icon": "┼" },
+      { "id": "haworth", "label": "Haworth Projection", "appliesTo": "has-atoms", "section": "Teaching",
+        "subtitle": "The sugar ring flat", "icon": "⬡" },
+      { "id": "disconnect", "label": "Disconnect Bond…", "appliesTo": "single-bond", "section": "Teaching",
+        "subtitle": "The synthons, with the retrosynthetic arrow", "icon": "⇒" },
+      { "id": "mark-answer", "label": "Mark as Answer", "appliesTo": "selection", "section": "Worksheet",
+        "subtitle": "Left out of the question when exported", "icon": "✓" },
+      { "id": "unmark-answer", "label": "Unmark Answer", "appliesTo": "selection", "section": "Worksheet", "icon": "✗" },
+      { "id": "set-step", "label": "Set Step…", "appliesTo": "has-curved-arrows", "section": "Mechanism",
+        "subtitle": "When these arrows appear in Present Mechanism", "icon": "#",
+        "query": { "placeholder": "Step number, then a caption", "minLength": 1, "debounceMs": 100 } },
+      { "id": "clear-steps", "label": "Clear Steps", "appliesTo": "has-curved-arrows", "section": "Mechanism", "icon": "#" }
+    ],
+    "marks": [
+      { "id": "answer", "label": "Answer", "indicator": "outline",
+        "description": "Shown on screen, left out of Export Question" },
+      { "id": "step", "label": "Mechanism step", "indicator": "none" }
+    ],
+    "exports": [
+      { "id": "question", "label": "Question (answers left out)", "omit": ["answer"],
+        "description": "The drawing without what is marked as the answer, for a worksheet." }
+    ]
+  }
+}
