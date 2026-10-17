@@ -58,7 +58,7 @@ def serve(host: Host) -> int:
             elif method == 'query':
                 result = actions.query(params)
             elif method == 'card':
-                result = card.answer(host, actions.settings, params)
+                result = card.answer(host, params)
             elif method == 'shutdown':
                 return 0
             else:

@@ -166,19 +166,24 @@ def test_a_cancelled_export_is_not_an_error():
     assert final(run(molion, invoke('export-stub'))) == {'ok': True}
 
 
-def test_the_card_shows_each_view_with_its_copy():
-    molion = run(drawing(), request('card', {'cardId': 'si', 'scope': 'selection',
-                                             'structures': [{'moleculeId': 'm1'}]}))
+def test_the_card_shows_each_view_with_its_copy(tmp_path):
+    # The adduct copied last does not reach the card: the card would show it only once
+    # the drawing next changed.
+    molion = run(drawing(), request('initialize', {'dataDir': str(tmp_path)}, 1),
+                 dict(invoke('copy-hrms', 'esi-mk'), id=4),
+                 request('card', {'cardId': 'si', 'scope': 'selection', 'structures': [{'moleculeId': 'm1'}]}))
     answer = final(molion)
-    assert [v['id'] for v in answer['views']] == ['hrms', 'anal', 'stub']
-    hrms_view, anal_view, stub_view = answer['views']
-    assert hrms_view['copy'] == 'HRMS (ESI) m/z: [M+H]⁺ calcd for C₁₃H₁₉O₂ 207.1380, found '
+    assert [(v['id'], v['label']) for v in answer['views']] == [
+        ('mh', '[M+H]⁺'), ('mna', '[M+Na]⁺'), ('anal', 'Anal.'), ('stub', 'SI')]
+    mh_view, mna_view, anal_view, stub_view = answer['views']
+    assert mh_view['copy'] == 'HRMS (ESI) m/z: [M+H]⁺ calcd for C₁₃H₁₉O₂ 207.1380, found '
+    assert '229.1199' in mna_view['copy']
     assert anal_view['blocks'] == [{'type': 'note', 'text': 'Anal. Calcd for C₁₃H₁₈O₂: C, 75.69; H, 8.80'}]
-    assert stub_view['copy'].startswith('2\nC₁₃H₁₈O₂; HRMS')
-    assert stub_view['blocks'][0]['text'].startswith('2 · C₁₃H₁₈O₂; HRMS')
+    assert stub_view['copy'] == '2\nC₁₃H₁₈O₂\nSMILES: Sm1\nInChI: Im1\n'
+    assert stub_view['blocks'][0]['text'] == '2 · C₁₃H₁₈O₂'
     # The card never waits on the namer.
     assert all('name' not in c['payload']['targets'] for c in molion.calls('scene:get-strings'))
-    assert molion.calls('clipboard') == []
+    assert len(molion.calls('clipboard')) == 1      # the invoke's; a card never copies
 
 
 def test_every_card_string_fits():
@@ -196,3 +201,25 @@ def test_runs_as_a_process():
     process = subprocess.run([sys.executable, 'main.py'], cwd=ROOT, capture_output=True, text=True, timeout=30,
                              input=json.dumps(request('initialize', {}, 1)) + '\n')
     assert json.loads(process.stdout.splitlines()[0])['result']['name'] == 'SI Toolkit'
+
+
+def test_a_stub_without_names_says_why():
+    molion = drawing()
+
+    def unnamed(params):
+        reply = strings(dict(params, payload=dict(params['payload'], targets=['smiles', 'inchi'])))
+        for found in reply['molecules']:
+            found['nameError'] = 'Names cannot be checked: the namer is not built.'
+        return reply
+    molion.answers['scene:get-strings'] = unnamed
+    assert final(run(molion, invoke('copy-stub')))['message'] == (
+        'Copied the SI stub for 2 compounds, without names (Names cannot be checked: the namer is not built)')
+
+
+def test_several_structures_on_the_card_are_told_apart_by_number_or_formula():
+    molion = drawing(molecules=[molecule('m1', 'a1', '2'), molecule('m2', 'a2')])
+    answer = final(run(molion, request('card', {'cardId': 'si', 'scope': 'document',
+                                                 'structures': [{'moleculeId': 'm1'}, {'moleculeId': 'm2'}]})))
+    texts = [block['text'] for block in answer['views'][0]['blocks']]
+    assert texts[0].startswith('2: HRMS')
+    assert texts[1].startswith('C₁₃H₁₈O₂: HRMS')

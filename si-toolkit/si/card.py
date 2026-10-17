@@ -44,49 +44,50 @@ def _view(view_id: str, label: str, lines: list[str], problems: list[str], copy:
 
 
 def _who(compound) -> str:
-    return compound.number or (compound.structure or {}).get('formula') or 'Structure'
+    return compound.number or stub.formula_of(compound, True) or 'Structure'
 
 
-def answer(host, settings, params: dict) -> dict:
+def _lines(compounds, describe, problem_types):
+    """One line per compound (prefixed by which, when there are several), the problems among
+    them, and what Copy takes."""
+    several = len(compounds) > 1
+    lines, problems, copy = [], [], []
+    for compound in compounds:
+        prefix = f'{_who(compound)}: ' if several else ''
+        try:
+            line = describe(compound.structure)
+            copy.append(line)
+            lines.append(prefix + line.rstrip())
+        except problem_types as reason:
+            lines.append(f'{prefix}{reason}')
+            problems.append(lines[-1])
+    return lines, problems, copy
+
+
+def answer(host, params: dict) -> dict:
+    """The card follows the selection only, never the adduct last copied: Molion asks it again
+    when the drawing changes, so anything else it showed would be out of date until then. Its
+    HRMS views are the two adducts most papers report; Copy HRMS Line… offers the rest."""
     ids = [s['moleculeId'] for s in params.get('structures') or [] if s.get('moleculeId')]
     compounds = [c for c in scope.of_molecules(host, ids) if c.structure]
     if not compounds:
         return {'message': 'Select a structure.'}
-    adduct = settings.adduct
-    several = len(compounds) > 1
 
-    hrms_lines, hrms_problems, hrms_copy = [], [], []
-    ea_lines, ea_problems, ea_copy = [], [], []
-    for compound in compounds:
-        prefix = f'{_who(compound)}: ' if several else ''
-        try:
-            line = hrms.ion(compound.structure, adduct).line()
-            hrms_copy.append(line)
-            hrms_lines.append(prefix + line.rstrip())
-        except hrms.NotMeasurable as reason:
-            hrms_lines.append(f'{prefix}no m/z: {reason}')
-            hrms_problems.append(hrms_lines[-1])
-        try:
-            line = elemental.line(compound.structure)
-            ea_copy.append(line)
-            ea_lines.append(prefix + line)
-        except elemental.NotAnalysable as reason:
-            ea_lines.append(f'{prefix}no analysis: {reason}')
-            ea_problems.append(ea_lines[-1])
+    views = []
+    for adduct in (hrms.BY_ID['esi-mh'], hrms.BY_ID['esi-mna']):
+        lines, problems, copy = _lines(compounds, lambda s, a=adduct: hrms.ion(s, a).line(),
+                                       hrms.NotMeasurable)
+        views.append(_view(adduct.id.removeprefix('esi-'), adduct.label, lines, problems, _fit(copy, '\n'),
+                           'Copy HRMS Line… offers other adducts'))
+    lines, problems, copy = _lines(compounds, elemental.line, elemental.NotAnalysable)
+    views.append(_view('anal', 'Anal.', lines, problems, _fit(copy, '\n'), 'C, H, N and S, as combustion reports them'))
 
     # Names take the namer a moment; a card that waited on them would lag the selection.
     scope.with_strings(host, compounds, names=False)
-    stub_blocks = [stub.block(c, adduct) for c in compounds]
-    # On the card, each block's heading and its formula-and-HRMS line.
-    stub_lines = [' · '.join(block.split('\n')[:2]) for block in stub_blocks]
+    blocks = [stub.block(c, None) for c in compounds]
+    # On the card, each block's first two lines: its number and formula, or formula and SMILES.
+    lines = [' · '.join(block.split('\n')[:2]) for block in blocks]
+    views.append(_view('stub', 'SI', lines, [], _fit(blocks, '\n\n') + '\n',
+                       'Formula, SMILES and InChI; Copy SI Stub adds names and HRMS'))
 
-    return {
-        'subtitle': f'Calculated · {adduct.ionisation} {adduct.label}',
-        'views': [
-            _view('hrms', 'HRMS', hrms_lines, hrms_problems, _fit(hrms_copy, '\n'),
-                  'Copy HRMS Line… chooses another adduct'),
-            _view('anal', 'Anal.', ea_lines, ea_problems, _fit(ea_copy, '\n'), 'C, H, N and S, as combustion reports them'),
-            _view('stub', 'SI', stub_lines, [], _fit(stub_blocks, '\n\n') + '\n',
-                  'Formula, HRMS, SMILES and InChI; Copy SI Stub adds names'),
-        ],
-    }
+    return {'subtitle': 'Calculated', 'views': views}

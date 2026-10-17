@@ -16,6 +16,7 @@ class Compound:
     name: str | None = None
     smiles: str | None = None
     inchi: str | None = None
+    name_error: str | None = None      # why there is no name: the namer refused, or could not run
 
 
 def _molecules(host) -> list[dict]:
@@ -80,6 +81,7 @@ def with_strings(host, compounds: list[Compound], names: bool = True) -> list[Co
         return compounds
     ids = [c.molecule_id for c in compounds]
     targets = ['smiles', 'inchi'] + (['name'] if names else [])
+    refused = None
     try:
         answer = host.scene('get-strings', targets=targets, moleculeIds=ids)
     except HostError as error:
@@ -87,9 +89,18 @@ def with_strings(host, compounds: list[Compound], names: bool = True) -> list[Co
             raise
         # No namer (OPSIN missing): the rest is still worth having.
         log(f'names unavailable: {error}')
+        refused = str(error)
         answer = host.scene('get-strings', targets=['smiles', 'inchi'], moleculeIds=ids)
     strings = {m['moleculeId']: m for m in answer.get('molecules') or []}
     for compound in compounds:
         found = strings.get(compound.molecule_id) or {}
         compound.smiles, compound.inchi, compound.name = found.get('smiles'), found.get('inchi'), found.get('name')
+        compound.name_error = (found.get('nameError') or found.get('error') or refused) if names else None
     return compounds
+
+
+def why_unnamed(compounds: list[Compound]) -> str | None:
+    """When no compound got a name, why: most often the namer cannot run on this machine."""
+    if not compounds or any(c.name for c in compounds):
+        return None
+    return next((c.name_error for c in compounds if c.name_error), None)

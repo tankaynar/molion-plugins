@@ -14,12 +14,14 @@ Turn it on in **Settings → Plugins → Included with Molion**. Then press Spac
   N and S, which are what combustion analysis measures.
 - **Copy SI Stub** copies a block for every compound in the drawing, for Word: its number and
   name, its formula and HRMS line, its SMILES and InChI. Numbered compounds come first, in
-  number order (1, 2, 3a, 3b, 10), then the rest as drawn.
+  number order (1, 2, 3a, 3b, 10), then the rest as drawn. When no name can be made (the
+  namer cannot run, or refuses every structure), the stub comes without names and says why.
 - **Export SI Stub as CSV…** saves the same as a CSV file: `number, name, formula, ionisation,
   adduct, mz, smiles, inchi`.
 
-**Show SI Toolkit** shows the SI card, with the selection's HRMS line, elemental analysis and
-stub, each with **Copy**.
+**Show SI Toolkit** shows the SI card for the selection: its [M+H]⁺ and [M+Na]⁺ HRMS lines,
+its elemental analysis, and its stub (number, formula, SMILES and InChI), each with **Copy**.
+The card shows those two adducts whatever was copied last; Copy HRMS Line… offers the rest.
 
 Nothing is selected: all of the drawing. A structure drawn as an ion is measured as it is
 ([M]⁺), whatever adduct is chosen.

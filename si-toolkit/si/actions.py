@@ -28,6 +28,11 @@ def _matches(adduct: hrms.Adduct, text: str) -> bool:
     return any(word.startswith(text) for word in words)
 
 
+def _unnamed(compounds) -> str:
+    reason = scope.why_unnamed(compounds)
+    return f', without names ({reason.rstrip(".")})' if reason else ''
+
+
 class Actions:
     def __init__(self, host, settings: Settings | None = None) -> None:
         self.host = host
@@ -106,7 +111,8 @@ class Actions:
         if not compounds:
             return {'ok': False, 'error': NOTHING_DRAWN}
         self.host.copy(stub.text(compounds, self.settings.adduct))
-        return {'ok': True, 'message': f'Copied the SI stub for {_plural(len(compounds), "compound")}'}
+        return {'ok': True, 'message': f'Copied the SI stub for {_plural(len(compounds), "compound")}'
+                                       + _unnamed(compounds)}
 
     def export_stub(self) -> dict:
         compounds = self._stub_compounds()
@@ -116,7 +122,7 @@ class Actions:
                                     suggested_name='si-stub.csv', extension='csv')
         if saved.get('cancelled'):
             return {'ok': True}
-        return {'ok': True, 'message': f'Saved {saved.get("name") or "the SI stub"}'}
+        return {'ok': True, 'message': f'Saved {saved.get("name") or "the SI stub"}' + _unnamed(compounds)}
 
     def invoke(self, params: dict) -> dict:
         contribution = params.get('contributionId')

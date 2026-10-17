@@ -37,8 +37,11 @@ def test_a_block_per_compound():
                     'InChI: InChI=1S/C13H18O2/c1\n')
 
 
-def test_an_unnumbered_unnamed_compound_is_headed_by_its_formula():
-    assert stub.heading(compound(number=None, name=None)) == 'C₁₃H₁₈O₂'
+def test_an_unnumbered_unnamed_compound_starts_with_its_formula():
+    assert stub.heading(compound(number=None, name=None)) == ''
+    # The formula line says what it is, once.
+    assert stub.block(compound(number=None, name=None), None).split('\n')[:2] == [
+        'C₁₃H₁₈O₂', 'SMILES: CC(C)Cc1ccc(cc1)C(C)C(=O)O']
     assert stub.heading(compound(number=None)) == 'ibuprofen'
 
 

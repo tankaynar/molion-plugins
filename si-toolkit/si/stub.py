@@ -20,7 +20,7 @@ from si import hrms
 from si.compounds import Compound
 
 
-def _formula(compound: Compound, unicode: bool) -> str:
+def formula_of(compound: Compound, unicode: bool) -> str:
     structure = compound.structure or {}
     if not structure.get('composition'):
         return structure.get('formula') or ''
@@ -40,15 +40,16 @@ def _ion(compound: Compound, adduct: hrms.Adduct) -> hrms.Ion | None:
 
 
 def heading(compound: Compound) -> str:
-    """"3a: name", "3a", or the name alone; the formula when there is neither."""
-    parts = [p for p in (compound.number, compound.name) if p]
-    return ': '.join(parts) if parts else (_formula(compound, True) or 'Structure')
+    """"3a: name", "3a", or the name alone; nothing when there is neither (the formula line
+    that follows says what it is)."""
+    return ': '.join(p for p in (compound.number, compound.name) if p)
 
 
-def block(compound: Compound, adduct: hrms.Adduct) -> str:
+def block(compound: Compound, adduct: hrms.Adduct | None) -> str:
+    """Without an adduct, no HRMS line (the card shows HRMS in views of its own)."""
     lines = [heading(compound)]
-    ion = _ion(compound, adduct)
-    formula = _formula(compound, True)
+    ion = _ion(compound, adduct) if adduct else None
+    formula = formula_of(compound, True)
     lines.append('; '.join(p for p in (formula, ion.line().rstrip() if ion else None) if p))
     if compound.smiles:
         lines.append(f'SMILES: {compound.smiles}')
@@ -70,7 +71,7 @@ def csv_text(compounds: list[Compound], adduct: hrms.Adduct) -> str:
     writer.writerow(CSV_HEADER)
     for compound in compounds:
         ion = _ion(compound, adduct)
-        writer.writerow([compound.number or '', compound.name or '', _formula(compound, False),
+        writer.writerow([compound.number or '', compound.name or '', formula_of(compound, False),
                          ion.ionisation if ion else '', ion.label if ion else '',
                          f'{ion.mz:.4f}' if ion else '', compound.smiles or '', compound.inchi or ''])
     return out.getvalue()
