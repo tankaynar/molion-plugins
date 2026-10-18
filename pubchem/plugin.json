@@ -3,6 +3,7 @@
   "name": "PubChem",
   "version": "1.0.0",
   "description": "Finds compounds on PubChem by name, CID or InChIKey and places PubChem's own drawing.",
+  "icon": "icon.svg",
   "exec": { "command": "python3", "args": ["main.py"] },
   "capabilities": ["network"],
   "contributes": {

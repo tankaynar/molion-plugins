@@ -3,6 +3,7 @@
   "name": "TLC Plate",
   "version": "1.0.0",
   "description": "Thin-layer chromatography plates: lanes, spots with Rf, co-spots, stains and eluents.",
+  "icon": "icon.svg",
   "exec": { "command": "python3", "args": ["main.py"] },
   "capabilities": ["scene:read", "scene:write"],
   "contributes": {

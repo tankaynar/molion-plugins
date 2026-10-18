@@ -3,6 +3,7 @@
   "name": "Orbitals",
   "version": "1.0.0",
   "description": "Atomic and hybrid orbitals (s, p, sp, sp², sp³, d) placed on atoms, with their phases shaded or signed.",
+  "icon": "icon.svg",
   "exec": { "command": "python3", "args": ["main.py"] },
   "capabilities": ["scene:read", "scene:write"],
   "contributes": {

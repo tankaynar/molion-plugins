@@ -3,6 +3,7 @@
   "name": "Teaching",
   "version": "1.0.0",
   "description": "Newman, Fischer and Haworth projections, retrosynthetic disconnections, mechanisms presented step by step, and worksheets.",
+  "icon": "icon.svg",
   "exec": { "command": "python3", "args": ["main.py"] },
   "capabilities": ["scene:read", "scene:write"],
   "contributes": {

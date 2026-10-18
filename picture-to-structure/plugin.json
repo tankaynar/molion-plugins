@@ -3,6 +3,7 @@
   "name": "Picture to Structure",
   "version": "1.0.0",
   "description": "Turns a picture of a molecule, from a paper or a screenshot, into a structure you can edit. Recognition runs on this computer.",
+  "icon": "icon.svg",
   "license": "MIT",
   "exec": { "command": "python3", "args": ["main.py"] },
   "capabilities": ["scene:read", "scene:write", "network"],

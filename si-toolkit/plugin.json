@@ -3,6 +3,7 @@
   "name": "SI Toolkit",
   "version": "1.0.0",
   "description": "HRMS lines, elemental analyses and an SI stub for every compound, ready to paste.",
+  "icon": "icon.svg",
   "exec": { "command": "python3", "args": ["main.py"] },
   "capabilities": ["scene:read", "files"],
   "contributes": {
