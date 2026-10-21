@@ -6,8 +6,15 @@
   "icon": "icon.svg",
   "license": "MIT; shift data under the nmrshiftdb2 Database License",
   "exec": { "command": "python3", "args": ["main.py", "--data", "data/shifts.bin.gz"] },
-  "capabilities": ["scene:read"],
+  "capabilities": ["scene:read", "orca"],
   "contributes": {
+    "actions": [
+      { "id": "calculate-orca",
+        "label": "Calculate NMR with ORCA",
+        "appliesTo": "has-atoms",
+        "section": "NMR",
+        "subtitle": "Calculated ¹H and ¹³C shifts for the selection, with your ORCA" }
+    ],
     "cards": [
       { "id": "nmr",
         "title": "NMR",

@@ -21,13 +21,26 @@ back.
 Labels (OMe, Ph, Boc) are predicted as the groups they stand for, and light up the label.
 Groups without a structure (R, X) are not predicted.
 
+## Calculated shifts, with ORCA
+
+Where ORCA is set up in Molion (Settings → Calculations), the card offers **Calculate NMR with
+ORCA** (also in the Space palette). Molion runs GIAO shieldings at TPSS/pcSseg-1 on the
+optimised geometry, against TMS at the same level, and shows its progress in the card. Once
+done, the peaks move to the calculated shifts (each class's mean, multiplets as before), the
+card says "Calculated" and names the method, and Copy says "calculated". A shift the
+calculation lacks stays predicted and says so. Without ORCA the card is exactly as above.
+
 ## How it talks to Molion
 
 It declares one card (`contributes.cards` in plugin.json, `input: "structure"`). Molion sends a
 `card` request with the selection's structures, already perceived
 (aromaticity, hydrogens, symmetry, double-bond geometry), and draws the spectrum blocks this
-answers with. The plugin never reads or changes the drawing, needs no network, and only
-`scene:read`.
+answers with. The plugin never changes the drawing and needs no network.
+
+- `scene:read`: the structures, and for its action the selection's (`get-structure`).
+- `orca`: Molion's `calculate` (`nmr/calculated.py`). The card only asks what there is
+  (`start: false`); the action **Calculate NMR with ORCA** starts the job. Molion runs ORCA, so
+  the plugin never sees where it is installed.
 
 Turn it on in Molion's Settings → Plugins.
 
