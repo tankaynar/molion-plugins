@@ -32,7 +32,7 @@ def test_the_picture_has_a_circle_and_six_labelled_bonds():
     ops = newman.drawing(newman.from_projection(ANSWER))['ops']
     assert sum(op['op'] == 'ellipse' for op in ops) == 1
     assert sum(op['op'] == 'line' for op in ops) == 6
-    assert sorted(op['text'] for op in ops if op['op'] == 'text') == ['CH3', 'CH3', 'H', 'H', 'H', 'H']
+    assert sorted(op['text'] for op in ops if op['op'] == 'text') == ['CH₃', 'CH₃', 'H', 'H', 'H', 'H']
 
 
 def test_the_back_carbon_hides_the_middle_of_the_back_bonds():
@@ -69,3 +69,11 @@ def test_round_trip():
     model = newman.from_projection(ANSWER)
     assert newman.load(newman.dump(model)) == model
     assert newman.load('{"v": 1}') is None
+
+
+def test_formula_labels_set_their_counts_low():
+    assert newman.formula_text('NH2') == 'NH₂'
+    assert newman.formula_text('CH2OH') == 'CH₂OH'
+    assert newman.formula_text('C(CH3)3') == 'C(CH₃)₃'
+    assert newman.formula_text('CO2Et') == 'CO₂Et'
+    assert newman.formula_text('H') == 'H'

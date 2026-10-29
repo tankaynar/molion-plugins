@@ -76,13 +76,26 @@ def _point(angle: float, radius: float, centre: tuple[float, float]) -> tuple[fl
     return (centre[0] + radius * math.sin(theta), centre[1] - radius * math.cos(theta))
 
 
+_SUBSCRIPTS = str.maketrans('0123456789', '₀₁₂₃₄₅₆₇₈₉')
+
+
+def formula_text(label: str) -> str:
+    """A group's label as a formula is written: counts after an element or a bracket set low
+    (NH2 → NH₂, CH2OH → CH₂OH). A display-list text op has no subscripts of its own."""
+    out = []
+    for i, ch in enumerate(label):
+        out.append(ch.translate(_SUBSCRIPTS) if ch.isdigit() and i > 0 and (label[i - 1].isalpha()
+                   or label[i - 1] == ')' or out[-1] in '₀₁₂₃₄₅₆₇₈₉') else ch)
+    return ''.join(out)
+
+
 def _label(text: str, angle: float, end: tuple[float, float]) -> dict:
     theta = math.radians(angle)
     dx, dy = math.sin(theta), -math.cos(theta)
     align = 'start' if dx > 0.3 else 'end' if dx < -0.3 else 'middle'
     baseline = 'top' if dy > 0.3 else 'bottom' if dy < -0.3 else 'middle'
     at = [round(end[0] + dx * LABEL_GAP, 2), round(end[1] + dy * LABEL_GAP, 2)]
-    return {'op': 'text', 'text': text, 'at': at, 'align': align, 'baseline': baseline,
+    return {'op': 'text', 'text': formula_text(text), 'at': at, 'align': align, 'baseline': baseline,
             'size': TEXT_SIZE, 'color': INK}
 
 

@@ -15,7 +15,7 @@
     "actions": [
       { "id": "newman", "label": "Newman Projection", "appliesTo": "single-bond", "section": "Teaching",
         "subtitle": "Looking down this bond", "icon": "⊙" },
-      { "id": "edit-newman", "label": "Edit Newman…", "appliesTo": "own-image", "section": "Teaching",
+      { "id": "edit-newman", "label": "Edit Newman…", "appliesTo": "own-image", "requirement": "Select a Newman projection first", "section": "Teaching",
         "subtitle": "Turn the bond: staggered, gauche, eclipsed", "icon": "⊙", "doubleClick": true },
       { "id": "fischer", "label": "Fischer Projection", "appliesTo": "has-atoms", "section": "Teaching",
         "subtitle": "The carbon chain upright", "icon": "┼" },

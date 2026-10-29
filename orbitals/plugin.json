@@ -40,11 +40,11 @@
       { "id": "place-dz2", "label": "Place dz² Orbital", "category": "Orbitals", "icon": "✣", "keywords": ["orbital", "d", "dz2", "transition metal"] }
     ],
     "actions": [
-      { "id": "edit", "label": "Edit Orbital…", "appliesTo": "own-image", "section": "Orbital",
+      { "id": "edit", "label": "Edit Orbital…", "appliesTo": "own-image", "requirement": "Select an orbital picture first", "section": "Orbital",
         "subtitle": "Type, phase, colours and angle", "icon": "∞", "doubleClick": true },
-      { "id": "flip-phase", "label": "Swap Signs", "appliesTo": "own-image", "section": "Orbital",
+      { "id": "flip-phase", "label": "Swap Signs", "appliesTo": "own-image", "requirement": "Select an orbital picture first", "section": "Orbital",
         "subtitle": "The positive and negative lobes change places", "icon": "±" },
-      { "id": "rotate-90", "label": "Turn Orbital 90°", "appliesTo": "own-image", "section": "Orbital", "icon": "↻" }
+      { "id": "rotate-90", "label": "Turn Orbital 90°", "appliesTo": "own-image", "requirement": "Select an orbital picture first", "section": "Orbital", "icon": "↻" }
     ],
     "templates": [
       { "name": "sp³ Hybrid Set", "scene": "templates/sp3-set.json",
